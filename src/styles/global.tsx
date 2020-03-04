@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 * {
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
   box-sizing: border-box;
   padding: 0;
   margin: 0;
