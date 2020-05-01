@@ -28,6 +28,7 @@ module.exports = {
     'prettier'
   ],
   rules: {
+    "react/jsx-curly-newline": "off", 
     'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
