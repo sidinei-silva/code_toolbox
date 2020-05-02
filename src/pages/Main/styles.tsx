@@ -14,6 +14,6 @@ export const Title = styled.h1`
 export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 25px 0;
 `;
