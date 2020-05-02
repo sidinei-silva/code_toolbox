@@ -1,15 +1,19 @@
 import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-
-export const Container = styled.div`
-  padding: 25px;
-`;
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Typography,
+  Divider,
+  Container,
+  TextField,
+  Grid,
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  ExpansionPanelDetails,
+} from '@material-ui/core';
 
 export const Title = styled.h1`
   font-weight: 100;
@@ -18,16 +22,29 @@ export const Title = styled.h1`
   font-family: 'Montserrat', sans-serif;
 `;
 
-export const Content = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 25px 0;
+export const Form = styled.form`
+  &&#timezone-convert,
+  &&#timestamp-convert {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    .submit {
+      margin: 0 10px;
+    }
+  }
 `;
+
+export const StyledContainer = styled(Container)``;
 
 export const StyledTypography = styled(Typography)``;
 
-export const StyledCard = styled(Card)``;
+export const StyledCard = styled(Card)`
+  margin: 10px;
+  min-width: 550px;
+  &&.w-70 {
+    min-width: 70%;
+  }
+`;
 
 export const StyledCardContent = styled(CardContent)`
   .title {
@@ -37,6 +54,7 @@ export const StyledCardContent = styled(CardContent)`
 
 export const StyledCardActions = styled(CardActions)`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
 `;
@@ -55,20 +73,20 @@ export const StyledButton = styled(Button)`
   }
 `;
 
-export const Form = styled.form`
-  width: 600px;
-
-  input {
-    border-radius: 5px;
-    height: 40px;
-    margin-bottom: 15px;
-    padding: 0 20px;
-    color: #777;
-    font-size: 15px;
-    width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    &::placeholder {
-      color: #999;
-    }
+export const StyledTextField = styled(TextField)`
+  &&.digit-4 {
+    width: 100px !important;
   }
+  &&.digit-2 {
+    width: 80px !important;
+  }
+  margin-left: 10px !important;
 `;
+
+export const StyledGrid = styled(Grid)``;
+
+export const StyledExpansionPanel = styled(ExpansionPanel)``;
+
+export const StyledExpansionPanelSummary = styled(ExpansionPanelSummary)``;
+
+export const StyledExpansionPanelDetails = styled(ExpansionPanelDetails)``;
