@@ -19,10 +19,12 @@ export default function Main() {
             />
           </Link>
 
-          <Generator
-            title="Box Shadow"
-            description="Timestamp generator for javascript"
-          />
+          <Link to="/border-radius">
+            <Generator
+              title="Border Radius"
+              description="Border Radius generator for CSS"
+            />
+          </Link>
 
           <Generator title="Coming Soon" description="Coming Soon" />
           <Generator title="Coming Soon" description="Coming Soon" />
