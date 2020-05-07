@@ -68,8 +68,8 @@ export const ExampleDiv = styled(StyledBox)<PropsVirtualDiv>`
   width: 400px;
   height: 400px;
   background: #090856;
-  border: ${props => props.borderwidth}px ${props => props.borderstyle}
-    ${props => props.bordercolor};
+  border: ${props =>
+    `${props.borderwidth}px ${props.borderstyle} ${props.bordercolor}`};
   border-top-left-radius: ${props => props.topleft}px;
   border-top-right-radius: ${props => props.topright}px;
   border-bottom-left-radius: ${props => props.bottomleft}px;
