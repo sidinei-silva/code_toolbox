@@ -25,6 +25,7 @@ import Header from '../../components/Header';
 import timezones from './timezones';
 
 const Timestamp: React.FC = () => {
+  document.title = 'Timestamp - Code Toolbox';
   // Generate Now
   const [time, setTime] = useState(new Date());
   time.setSeconds(0);
