@@ -65,8 +65,11 @@ export const StyledCardContent = styled(CardContent)`
 export const StyledCard = styled(Card)``;
 
 export const ExampleDiv = styled(StyledBox)<PropsVirtualDiv>`
-  width: 400px;
-  height: 400px;
+  width: 75vw;
+  height: 75vw;
+  max-width: 400px;
+  max-height: 400px;
+
   background: #090856;
   border: ${props =>
     `${props.borderwidth}px ${props.borderstyle} ${props.bordercolor}`};
@@ -76,4 +79,7 @@ export const ExampleDiv = styled(StyledBox)<PropsVirtualDiv>`
   border-bottom-right-radius: ${props => props.bottomright}px;
 `;
 
-export const StyledHuePicker = styled(HuePicker)``;
+export const StyledHuePicker = styled(HuePicker)`
+  align-items: center;
+  max-width: 100%;
+`;
