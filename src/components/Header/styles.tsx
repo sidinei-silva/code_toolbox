@@ -7,6 +7,7 @@ export const StyledButton = styled(Button)`
 `;
 
 export const Navbar = styled.nav`
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
