@@ -24,6 +24,7 @@ interface BorderRadius {
   borderWidth: number | string | Array<number | string>;
   borderStyle: string;
   borderColor: string;
+  backgroundColor: string;
 }
 
 export default function BorderRadius() {
@@ -37,6 +38,7 @@ export default function BorderRadius() {
     borderWidth: 0,
     borderStyle: 'solid',
     borderColor: '#000000',
+    backgroundColor: '#090856',
   });
 
   const [allCorners, setAllCorners] = useState<
@@ -288,6 +290,15 @@ export default function BorderRadius() {
     const { borderColor, ...rest } = borderRadius;
     setBorderRadius({
       borderColor: color.hex,
+      ...rest,
+    });
+  };
+
+  // ==== backgrounColor ====
+  const backgroundColorHandleInputChange = (color: any) => {
+    const { backgroundColor, ...rest } = borderRadius;
+    setBorderRadius({
+      backgroundColor: color.hex,
       ...rest,
     });
   };
@@ -655,6 +666,24 @@ export default function BorderRadius() {
                     </StyledGrid>
                   </StyledGrid>
                 </StyledCardContent>
+                <StyledCardContent>
+                  <StyledGrid
+                    container
+                    spacing={2}
+                    justify="center"
+                    alignContent="center"
+                  >
+                    <StyledGrid item md={10} lg={10} xs={11}>
+                      <StyledTypography id="input-slider" gutterBottom>
+                        Background Color (Optional)
+                      </StyledTypography>
+                      <StyledHuePicker
+                        color={borderRadius.backgroundColor}
+                        onChange={backgroundColorHandleInputChange}
+                      />
+                    </StyledGrid>
+                  </StyledGrid>
+                </StyledCardContent>
               </StyledGrid>
 
               <StyledGrid item md={6} lg={6}>
@@ -668,6 +697,9 @@ export default function BorderRadius() {
                   <StyledGrid item md={12} lg={12} xs={12}>
                     <StyledCard>
                       <StyledCardContent>
+                        <StyledTypography variant="body2">
+                          {`background-color: ${borderRadius.backgroundColor}`}
+                        </StyledTypography>
                         <StyledTypography variant="body2">
                           {`border-radius: ${borderRadius.topLeft}px ${borderRadius.topRight}px ${borderRadius.bottomLeft}px ${borderRadius.bottomRight}px;`}
                         </StyledTypography>
@@ -693,6 +725,7 @@ export default function BorderRadius() {
                       bottomright={borderRadius.bottomRight}
                       borderstyle={borderRadius.borderStyle}
                       bordercolor={borderRadius.borderColor}
+                      backgroundcolor={borderRadius.backgroundColor}
                     />
                   </StyledGrid>
                 </StyledGrid>

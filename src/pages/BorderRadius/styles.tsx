@@ -23,6 +23,7 @@ interface PropsVirtualDiv {
   borderwidth: number | string | Array<number | string>;
   borderstyle: string;
   bordercolor: string;
+  backgroundcolor: string;
 }
 
 export const Title = styled.h1`
@@ -70,7 +71,7 @@ export const ExampleDiv = styled(StyledBox)<PropsVirtualDiv>`
   max-width: 400px;
   max-height: 400px;
 
-  background: #090856;
+  background-color: ${props => props.backgroundcolor};
   border: ${props =>
     `${props.borderwidth}px ${props.borderstyle} ${props.bordercolor}`};
   border-top-left-radius: ${props => props.topleft}px;
