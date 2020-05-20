@@ -38,13 +38,7 @@ export const StyledContainer = styled(Container)``;
 
 export const StyledTypography = styled(Typography)``;
 
-export const StyledCard = styled(Card)`
-  margin: 10px;
-  min-width: 550px;
-  &&.w-70 {
-    min-width: 70%;
-  }
-`;
+export const StyledCard = styled(Card)``;
 
 export const StyledCardContent = styled(CardContent)`
   .title {
