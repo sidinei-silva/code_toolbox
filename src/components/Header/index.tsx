@@ -21,7 +21,7 @@ const Header = () => {
           <Home fontSize="large" />
         </StyledButton>
         <StyledButton
-          href="https://github.com/sidinei-silva/generations_hub"
+          href="https://github.com/sidinei-silva"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
