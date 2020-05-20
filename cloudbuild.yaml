@@ -1,10 +1,10 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/sidinei-dev/code-toolbox:latest', '.']
+  args: ['build', '-t', 'gcr.io/sidinei-dev/code-toolbox:$COMMIT_SHA', '.']
 # Push the image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/sidinei-dev/code-toolbox:latest']
+  args: ['push', 'gcr.io/sidinei-dev/code-toolbox:$COMMIT_SHA']
 # Deploy image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
@@ -12,7 +12,7 @@ steps:
   - 'deploy'
   - 'code-toolbox'
   - '--image'
-  - 'gcr.io/sidinei-dev/code-toolbox:latest'
+  - 'gcr.io/sidinei-dev/code-toolbox:$COMMIT_SHA'
   - '--region'
   - 'us-east1'
   - '--platform'
