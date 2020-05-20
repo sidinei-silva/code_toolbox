@@ -24,9 +24,12 @@ interface BorderRadius {
   borderWidth: number | string | Array<number | string>;
   borderStyle: string;
   borderColor: string;
+  backgroundColor: string;
 }
 
 export default function BorderRadius() {
+  document.title = 'Border Radius - Code Toolbox';
+
   const [borderRadius, setBorderRadius] = useState<BorderRadius>({
     topLeft: 30,
     topRight: 30,
@@ -35,6 +38,7 @@ export default function BorderRadius() {
     borderWidth: 0,
     borderStyle: 'solid',
     borderColor: '#000000',
+    backgroundColor: '#090856',
   });
 
   const [allCorners, setAllCorners] = useState<
@@ -290,6 +294,15 @@ export default function BorderRadius() {
     });
   };
 
+  // ==== backgrounColor ====
+  const backgroundColorHandleInputChange = (color: any) => {
+    const { backgroundColor, ...rest } = borderRadius;
+    setBorderRadius({
+      backgroundColor: color.hex,
+      ...rest,
+    });
+  };
+
   return (
     <>
       <Header />
@@ -305,7 +318,7 @@ export default function BorderRadius() {
               justify="center"
               alignItems="center"
             >
-              <StyledGrid item xs={6}>
+              <StyledGrid item md={6} lg={6}>
                 {/* allCorners */}
                 <StyledCardContent>
                   <StyledGrid
@@ -315,7 +328,7 @@ export default function BorderRadius() {
                     alignItems="flex-end"
                     direction="row"
                   >
-                    <StyledGrid item xs={8}>
+                    <StyledGrid item xs={8} md={8} lg={8}>
                       <StyledTypography id="input-slider" gutterBottom>
                         All Corners
                       </StyledTypography>
@@ -328,7 +341,7 @@ export default function BorderRadius() {
                         aria-labelledby="input-slider"
                       />
                     </StyledGrid>
-                    <StyledGrid item xs={2}>
+                    <StyledGrid item xs={3} md={2} lg={2}>
                       <StyledTextField
                         margin="dense"
                         id="allCorners"
@@ -359,7 +372,7 @@ export default function BorderRadius() {
                     alignItems="flex-end"
                     direction="row"
                   >
-                    <StyledGrid item xs={8}>
+                    <StyledGrid item md={8} lg={8} xs={8}>
                       <StyledTypography id="input-slider" gutterBottom>
                         Top Left
                       </StyledTypography>
@@ -376,7 +389,7 @@ export default function BorderRadius() {
                         aria-labelledby="input-slider"
                       />
                     </StyledGrid>
-                    <StyledGrid item xs={2}>
+                    <StyledGrid item xs={3} md={2} lg={2}>
                       <StyledTextField
                         margin="dense"
                         id="topLeft"
@@ -406,7 +419,7 @@ export default function BorderRadius() {
                     alignItems="flex-end"
                     direction="row"
                   >
-                    <StyledGrid item xs={8}>
+                    <StyledGrid item md={8} lg={8} xs={8}>
                       <StyledTypography id="input-slider" gutterBottom>
                         Top Right
                       </StyledTypography>
@@ -423,7 +436,7 @@ export default function BorderRadius() {
                         aria-labelledby="input-slider"
                       />
                     </StyledGrid>
-                    <StyledGrid item xs={2}>
+                    <StyledGrid item xs={3} md={2} lg={2}>
                       <StyledTextField
                         margin="dense"
                         id="topRight"
@@ -453,7 +466,7 @@ export default function BorderRadius() {
                     alignItems="flex-end"
                     direction="row"
                   >
-                    <StyledGrid item xs={8}>
+                    <StyledGrid item md={8} lg={8} xs={8}>
                       <StyledTypography id="input-slider" gutterBottom>
                         Bottom Left
                       </StyledTypography>
@@ -470,7 +483,7 @@ export default function BorderRadius() {
                         aria-labelledby="input-slider"
                       />
                     </StyledGrid>
-                    <StyledGrid item xs={2}>
+                    <StyledGrid item xs={3} md={2} lg={2}>
                       <StyledTextField
                         margin="dense"
                         id="bottomLeft"
@@ -500,7 +513,7 @@ export default function BorderRadius() {
                     alignItems="flex-end"
                     direction="row"
                   >
-                    <StyledGrid item xs={8}>
+                    <StyledGrid item md={8} lg={8} xs={8}>
                       <StyledTypography id="input-slider" gutterBottom>
                         Bottom Right
                       </StyledTypography>
@@ -517,7 +530,7 @@ export default function BorderRadius() {
                         aria-labelledby="input-slider"
                       />
                     </StyledGrid>
-                    <StyledGrid item xs={2}>
+                    <StyledGrid item xs={3} md={2} lg={2}>
                       <StyledTextField
                         margin="dense"
                         id="bottomRight"
@@ -547,7 +560,7 @@ export default function BorderRadius() {
                     alignItems="flex-end"
                     direction="row"
                   >
-                    <StyledGrid item xs={8}>
+                    <StyledGrid item md={8} lg={8} xs={8}>
                       <StyledTypography id="input-slider" gutterBottom>
                         Border Width (Optional)
                       </StyledTypography>
@@ -564,7 +577,7 @@ export default function BorderRadius() {
                         aria-labelledby="input-slider"
                       />
                     </StyledGrid>
-                    <StyledGrid item xs={2}>
+                    <StyledGrid item xs={3} md={2} lg={2}>
                       <StyledTextField
                         margin="dense"
                         id="borderWidth"
@@ -590,10 +603,9 @@ export default function BorderRadius() {
                     container
                     spacing={2}
                     justify="center"
-                    alignItems="center"
-                    direction="row"
+                    alignContent="center"
                   >
-                    <StyledGrid item xs={8}>
+                    <StyledGrid item md={8} lg={8} xs={11}>
                       <StyledTypography id="input-slider" gutterBottom>
                         Border Color (Optional)
                       </StyledTypography>
@@ -602,7 +614,7 @@ export default function BorderRadius() {
                         onChange={borderColorHandleInputChange}
                       />
                     </StyledGrid>
-                    <StyledGrid item xs={2}>
+                    <StyledGrid item xs={6} md={2} lg={2}>
                       <StyledTextField
                         className="digit-4"
                         id="outlined-select-currency"
@@ -654,9 +666,27 @@ export default function BorderRadius() {
                     </StyledGrid>
                   </StyledGrid>
                 </StyledCardContent>
+                <StyledCardContent>
+                  <StyledGrid
+                    container
+                    spacing={2}
+                    justify="center"
+                    alignContent="center"
+                  >
+                    <StyledGrid item md={10} lg={10} xs={11}>
+                      <StyledTypography id="input-slider" gutterBottom>
+                        Background Color (Optional)
+                      </StyledTypography>
+                      <StyledHuePicker
+                        color={borderRadius.backgroundColor}
+                        onChange={backgroundColorHandleInputChange}
+                      />
+                    </StyledGrid>
+                  </StyledGrid>
+                </StyledCardContent>
               </StyledGrid>
 
-              <StyledGrid item xs={6}>
+              <StyledGrid item md={6} lg={6}>
                 <StyledGrid
                   container
                   justify="center"
@@ -664,9 +694,12 @@ export default function BorderRadius() {
                   alignItems="center"
                   spacing={3}
                 >
-                  <StyledGrid item xs={8}>
+                  <StyledGrid item md={12} lg={12} xs={12}>
                     <StyledCard>
                       <StyledCardContent>
+                        <StyledTypography variant="body2">
+                          {`background-color: ${borderRadius.backgroundColor}`}
+                        </StyledTypography>
                         <StyledTypography variant="body2">
                           {`border-radius: ${borderRadius.topLeft}px ${borderRadius.topRight}px ${borderRadius.bottomLeft}px ${borderRadius.bottomRight}px;`}
                         </StyledTypography>
@@ -682,7 +715,7 @@ export default function BorderRadius() {
                       </StyledCardContent>
                     </StyledCard>
                   </StyledGrid>
-                  <StyledGrid item xs={8}>
+                  <StyledGrid item md={12} lg={12} xs={12}>
                     <ExampleDiv
                       id="example-div"
                       borderwidth={borderRadius.borderWidth}
@@ -692,6 +725,7 @@ export default function BorderRadius() {
                       bottomright={borderRadius.bottomRight}
                       borderstyle={borderRadius.borderStyle}
                       bordercolor={borderRadius.borderColor}
+                      backgroundcolor={borderRadius.backgroundColor}
                     />
                   </StyledGrid>
                 </StyledGrid>

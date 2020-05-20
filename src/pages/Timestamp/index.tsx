@@ -25,6 +25,7 @@ import Header from '../../components/Header';
 import timezones from './timezones';
 
 const Timestamp: React.FC = () => {
+  document.title = 'Timestamp - Code Toolbox';
   // Generate Now
   const [time, setTime] = useState(new Date());
   time.setSeconds(0);
@@ -102,62 +103,72 @@ const Timestamp: React.FC = () => {
 
                 <StyledDivider />
                 <StyledExpansionPanelDetails>
-                  <StyledGrid container justify="center">
+                  <StyledGrid container justify="center" alignContent="center">
                     <StyledGrid item xs>
                       <StyledCardContent>
                         <Form
                           onSubmit={convertDateTimezone}
                           id="timezone-convert"
                         >
-                          <StyledTextField
-                            id="datetime"
-                            label="Date/Hours"
-                            type="datetime-local"
-                            variant="outlined"
-                            margin="dense"
-                            size="small"
-                            value={dataTimeLocalForm}
-                            InputLabelProps={{
-                              shrink: true,
-                            }}
-                            onChange={event =>
-                              setDataTimeLocalForm(event.target.value)
-                            }
-                          />
-
-                          <StyledTextField
-                            className="digit-4"
-                            id="outlined-select-currency"
-                            select
-                            label="Timezone"
-                            value={timezoneFormTimezone}
-                            margin="dense"
-                            variant="outlined"
-                            size="small"
-                            SelectProps={{
-                              native: true,
-                            }}
-                            onChange={event =>
-                              // eslint-disable-next-line radix
-                              setTimezoneFormTimezone(
-                                parseInt(event.target.value),
-                              )
-                            }
-                          >
-                            {timezones.map(option => (
-                              <option key={option.value} value={option.value}>
-                                {option.label}
-                              </option>
-                            ))}
-                          </StyledTextField>
-                          <StyledButton
-                            className="submit"
-                            type="submit"
-                            color="primary"
-                            form="timezone-convert"
-                          >
-                            Get TimeStamp
-                          </StyledButton>
+                          <StyledGrid container spacing={1} justify="center">
+                            <StyledGrid item lg={3} md={3}>
+                              <StyledTextField
+                                id="datetime"
+                                label="Date/Hours"
+                                type="datetime-local"
+                                variant="outlined"
+                                margin="dense"
+                                size="small"
+                                value={dataTimeLocalForm}
+                                InputLabelProps={{
+                                  shrink: true,
+                                }}
+                                onChange={event =>
+                                  setDataTimeLocalForm(event.target.value)
+                                }
+                              />
+                            </StyledGrid>
+                            <StyledGrid item lg={2} md={2}>
+                              <StyledTextField
+                                className="digit-4"
+                                id="outlined-select-currency"
+                                select
+                                label="Timezone"
+                                value={timezoneFormTimezone}
+                                margin="dense"
+                                variant="outlined"
+                                size="small"
+                                SelectProps={{
+                                  native: true,
+                                }}
+                                onChange={event =>
+                                  // eslint-disable-next-line radix
+                                  setTimezoneFormTimezone(
+                                    parseInt(event.target.value),
+                                  )
+                                }
+                              >
+                                {timezones.map(option => (
+                                  <option
+                                    key={option.value}
+                                    value={option.value}
+                                  >
+                                    {option.label}
+                                  </option>
+                                ))}
+                              </StyledTextField>
+                            </StyledGrid>
+                            <StyledGrid item lg={1} md={1}>
+                              <StyledButton
+                                className="submit"
+                                type="submit"
+                                color="primary"
+                                form="timezone-convert"
+                              >
+                                Get TimeStamp
+                              </StyledButton>
+                            </StyledGrid>
+                          </StyledGrid>
                         </Form>
                       </StyledCardContent>
                       <StyledCardContent>
@@ -195,7 +206,7 @@ const Timestamp: React.FC = () => {
                 <StyledDivider />
                 <StyledExpansionPanelDetails>
                   <StyledGrid container direction="row" justify="space-evenly">
-                    <StyledGrid item xs={4}>
+                    <StyledGrid item lg={4}>
                       <StyledCardContent>
                         <StyledTypography
                           className="title"
@@ -224,7 +235,7 @@ const Timestamp: React.FC = () => {
                         </StyledTypography>
                       </StyledCardContent>
                     </StyledGrid>
-                    <StyledGrid item xs={4}>
+                    <StyledGrid item lg={4}>
                       <StyledCardContent>
                         <StyledTypography
                           className="title"
@@ -300,29 +311,35 @@ const Timestamp: React.FC = () => {
                           onSubmit={convertTimestamp}
                           id="timestamp-convert"
                         >
-                          <StyledTextField
-                            id="timestamp"
-                            label="Timestamp"
-                            variant="outlined"
-                            margin="dense"
-                            size="small"
-                            value={timeStampForm}
-                            onChange={event =>
-                              setTimeStampForm(parseInt(event.target.value))
-                            }
-                          />
-                          <StyledButton
-                            className="submit"
-                            type="submit"
-                            color="primary"
-                            form="timestamp-convert"
-                          >
-                            Get TimeStamp
-                          </StyledButton>
+                          <StyledGrid container spacing={2} justify="center">
+                            <StyledGrid item md={2} lg={2}>
+                              <StyledTextField
+                                id="timestamp"
+                                label="Timestamp"
+                                variant="outlined"
+                                margin="dense"
+                                size="small"
+                                value={timeStampForm}
+                                onChange={event =>
+                                  setTimeStampForm(parseInt(event.target.value))
+                                }
+                              />
+                            </StyledGrid>
+                            <StyledGrid item md={1} lg={1}>
+                              <StyledButton
+                                className="submit"
+                                type="submit"
+                                color="primary"
+                                form="timestamp-convert"
+                              >
+                                Get TimeStamp
+                              </StyledButton>
+                            </StyledGrid>
+                          </StyledGrid>
                         </Form>
                       </StyledCardContent>
                     </StyledGrid>
-                    <StyledGrid item xs={4}>
+                    <StyledGrid item lg={4}>
                       <StyledCardContent>
                         <StyledTypography
                           className="title"
@@ -350,7 +367,7 @@ const Timestamp: React.FC = () => {
                         </StyledTypography>
                       </StyledCardContent>
                     </StyledGrid>
-                    <StyledGrid item xs={4}>
+                    <StyledGrid item lg={4}>
                       <StyledCardContent>
                         <StyledTypography
                           className="title"
