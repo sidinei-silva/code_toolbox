@@ -11,7 +11,6 @@ export default function Main() {
     <>
       <Header />
       <Container>
-        <Title>Generators</Title>
         <Content>
           <Link to="/timestamp">
             <Generator
