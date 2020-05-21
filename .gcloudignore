@@ -1,0 +1,6 @@
+
+# Dist folder needs to be uploaded on deploy, if serving static_files using app.yaml 
+build/
+
+# Exclude dependencies
+node_modules/
