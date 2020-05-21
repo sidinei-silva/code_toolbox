@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Title, Content, Container } from './styles';
+import { Content, Container } from './styles';
 
 import Header from '../../components/Header';
 import Generator from '../../components/Generator';
@@ -26,7 +26,12 @@ export default function Main() {
             />
           </Link>
 
-          <Generator title="Coming Soon" description="Coming Soon" />
+          <Link to="/box-shadow">
+            <Generator
+              title="Box Shadow"
+              description="Box Shadow generator for CSS"
+            />
+          </Link>
           <Generator title="Coming Soon" description="Coming Soon" />
         </Content>
       </Container>
