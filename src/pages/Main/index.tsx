@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Content, Container } from './styles';
+import { Content, StyledContainer } from './styles';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Generator from '../../components/Generator';
 
 export default function Main() {
@@ -10,7 +11,7 @@ export default function Main() {
   return (
     <>
       <Header />
-      <Container>
+      <StyledContainer>
         <Content>
           <Link to="/timestamp">
             <Generator
@@ -34,7 +35,8 @@ export default function Main() {
           </Link>
           <Generator title="Coming Soon" description="Coming Soon" />
         </Content>
-      </Container>
+      </StyledContainer>
+      <Footer />
     </>
   );
 }

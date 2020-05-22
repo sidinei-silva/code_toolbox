@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+import { Container } from '@material-ui/core';
+
+export const StyledContainer = styled(Container)`
   padding: 25px;
 `;
 
