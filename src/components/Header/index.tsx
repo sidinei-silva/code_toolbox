@@ -1,5 +1,7 @@
 import React from 'react';
 import { GitHub, Home } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
+
 import { Navbar, StyledButton } from './styles';
 
 import logo from '../../assets/img/logo_transparent.png';
@@ -7,7 +9,9 @@ import logo from '../../assets/img/logo_transparent.png';
 const Header = () => {
   return (
     <Navbar>
-      <img src={logo} alt="generations-hub" />
+      <Link to="/">
+        <img src={logo} alt="generations-hub" />
+      </Link>
 
       <div id="button-group">
         <StyledButton
