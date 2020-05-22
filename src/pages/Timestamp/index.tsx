@@ -21,6 +21,7 @@ import {
 } from './styles';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 import timezones from './timezones';
 
@@ -402,6 +403,7 @@ const Timestamp: React.FC = () => {
           </StyledGrid>
         </StyledGrid>
       </StyledContainer>
+      <Footer />
     </>
   );
 };
