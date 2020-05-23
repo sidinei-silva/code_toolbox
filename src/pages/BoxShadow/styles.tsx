@@ -12,6 +12,13 @@ import {
   Input,
   Box,
   Switch,
+  CardHeader,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  TableContainer,
 } from '@material-ui/core';
 
 import { ChromePicker, TwitterPicker } from 'react-color';
@@ -105,3 +112,27 @@ export const StyledChromePicker = styled(ChromePicker)``;
 export const StyledTwitterPicker = styled(TwitterPicker)``;
 
 export const StyledSwitch = styled(Switch)``;
+
+export const StyledTable = styled(Table)``;
+
+export const StyledTableBody = styled(TableBody)``;
+
+export const StyledTableCell = styled(TableCell)``;
+
+export const StyledTableHead = styled(TableHead)`
+  background-color: ${props => props.theme.palette.common.black};
+
+  ${StyledTableCell} {
+    color: ${props => props.theme.palette.common.white};
+  }
+`;
+
+export const StyledTableContainer = styled(TableContainer)``;
+
+export const StyledCardHeader = styled(CardHeader)``;
+
+export const StyledTableRow = styled(TableRow)`
+  &:nth-of-type(odd) {
+    background-color: ${props => props.theme.palette.action.hover};
+  }
+`;

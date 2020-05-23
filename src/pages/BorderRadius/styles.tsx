@@ -98,10 +98,20 @@ export const StyledTable = styled(Table)``;
 
 export const StyledTableBody = styled(TableBody)``;
 
-export const StyledTableHead = styled(TableHead)``;
-
 export const StyledTableCell = styled(TableCell)``;
 
-export const StyledTableRow = styled(TableRow)``;
+export const StyledTableHead = styled(TableHead)`
+  background-color: ${props => props.theme.palette.common.black};
+
+  ${StyledTableCell} {
+    color: ${props => props.theme.palette.common.white};
+  }
+`;
+
+export const StyledTableRow = styled(TableRow)`
+  &:nth-of-type(odd) {
+    background-color: ${props => props.theme.palette.action.hover};
+  }
+`;
 
 export const StyledTableContainer = styled(TableContainer)``;
