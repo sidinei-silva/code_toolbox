@@ -88,7 +88,7 @@ const Timestamp: React.FC = () => {
       <StyledContainer>
         <Title>Timestamp - Javascript</Title>
         <StyledGrid container alignItems="stretch" justify="center" spacing={3}>
-          <StyledGrid item xs={12}>
+          <StyledGrid item md={11} xs={12}>
             <StyledCard>
               <StyledExpansionPanel defaultExpanded>
                 <StyledExpansionPanelSummary
@@ -191,9 +191,9 @@ const Timestamp: React.FC = () => {
               </StyledExpansionPanel>
             </StyledCard>
           </StyledGrid>
-          <StyledGrid item xs={12}>
+          <StyledGrid item md={11} xs={12}>
             <StyledCard>
-              <StyledExpansionPanel>
+              <StyledExpansionPanel defaultExpanded>
                 <StyledExpansionPanelSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
@@ -289,9 +289,9 @@ const Timestamp: React.FC = () => {
               </StyledExpansionPanel>
             </StyledCard>
           </StyledGrid>
-          <StyledGrid item xs={12}>
+          <StyledGrid item md={11} xs={12}>
             <StyledCard>
-              <StyledExpansionPanel>
+              <StyledExpansionPanel defaultExpanded>
                 <StyledExpansionPanelSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
@@ -399,6 +399,180 @@ const Timestamp: React.FC = () => {
                   </StyledGrid>
                 </StyledExpansionPanelDetails>
               </StyledExpansionPanel>
+            </StyledCard>
+          </StyledGrid>
+          <StyledGrid item md={11} xs={12}>
+            <StyledCard>
+              <StyledContainer>
+                <StyledCardHeader title="What is timestamp?" />
+                <StyledCardContent className="text-content">
+                  <StyledTypography>
+                    <q>
+                      A timestamp is a sequence of characters or encoded
+                      information identifying when a certain event occurred,
+                      usually giving date and time of day, sometimes accurate to
+                      a small fraction of a second. The term derives from rubber
+                      stamps used in offices to stamp the current date, and
+                      sometimes time, in ink on paper documents, to record when
+                      the document was received. Common examples of this type of
+                      timestamp are a postmark on a letter or the &quot;in&quot;
+                      and &quot;out&quot; times on a time card. In modern times
+                      usage of the term has expanded to refer to digital date
+                      and time information attached to digital data. For
+                      example, computer files contain timestamps that tell when
+                      the file was last modified, and digital cameras add
+                      timestamps to the pictures they take, recording the date
+                      and time the picture was taken.
+                    </q>
+                    <span> - </span>
+                    <a href="https://en.wikipedia.org/wiki/Timestamp">
+                      Timestamp - Wikipedia
+                    </a>
+                  </StyledTypography>
+                </StyledCardContent>
+                <StyledCardHeader title="Javascript Timestamp vs Unix Timestamp" />
+                <StyledCardContent className="text-content">
+                  <StyledTypography>
+                    The javascript timestamp obtained by the getTime() or
+                    Date.now() function is a 13-character string, representing
+                    the number of milliseconds passed since January 1, 1970
+                    00:00:00 UTC known as
+                    <span> </span>
+                    <a href="https://en.wikipedia.org/wiki/Unix_time">
+                      Unix Epoch.
+                    </a>
+                    <span> </span>
+                    The unix timestamp uses the seconds containing only 10
+                    characters as a unit of measurement.
+                  </StyledTypography>
+                  <br />
+                  <StyledTypography>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime">
+                      Monzila Developer - getTime()
+                    </a>
+                  </StyledTypography>
+                  <StyledTypography>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now">
+                      Monzila Developer - Date.Now() reference
+                    </a>
+                  </StyledTypography>
+                  <br />
+                  <br />
+                  <StyledTypography>
+                    <q>
+                      * JavaScript uses milliseconds as the unit of measurement,
+                      whereas Unix Time is in seconds.
+                    </q>
+                    <span> - </span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime">
+                      MDN web docs
+                    </a>
+                  </StyledTypography>
+                </StyledCardContent>
+                <StyledDivider />
+              </StyledContainer>
+            </StyledCard>
+          </StyledGrid>
+          <StyledGrid item md={11} xs={12}>
+            <StyledCard>
+              <StyledContainer>
+                <StyledCardHeader title="Timestamp Unix (seconds) anothers languages" />
+                <StyledCardContent>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>JavaScript: </b>
+                    </span>
+                    <code>Math.floor(new Date().getTime()/1000.0)</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>PHP: </b>
+                    </span>
+                    <code>time()</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>Python: </b>
+                    </span>
+                    <code>import time; time.time()</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>Java: </b>
+                    </span>
+                    <code>long epoch = System.currentTimeMillis()/1000;</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>C#: </b>
+                    </span>
+                    <code>DateTimeOffset.Now.ToUnixTimeSeconds()</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>PowerShell: </b>
+                    </span>
+                    <code>
+                      [int][double]::Parse((Get-Date
+                      (get-date).touniversaltime() -UFormat %s))
+                    </code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>Unix/Linux Shell: </b>
+                    </span>
+                    <code>date +%s</code>
+                  </StyledTypography>
+                </StyledCardContent>
+              </StyledContainer>
+            </StyledCard>
+          </StyledGrid>
+          <StyledGrid item md={11} xs={12}>
+            <StyledCard>
+              <StyledContainer>
+                <StyledCardHeader title="Timestamp Unix (milliseconds) anothers languages" />
+                <StyledCardContent>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>JavaScript: </b>
+                    </span>
+                    <code> Date.now() // or: new Date().getTime()</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>PHP: </b>
+                    </span>
+                    <code>round(microtime(true) * 1000)</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>Python: </b>
+                    </span>
+                    <code>int(round(time.time() * 1000))</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>Java: </b>
+                    </span>
+                    <code>System.currentTimeMillis()</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>C#: </b>
+                    </span>
+                    <code>DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()</code>
+                  </StyledTypography>
+                  <StyledTypography className="list-languages">
+                    <span>
+                      <b>PowerShell: </b>
+                    </span>
+                    <code>
+                      [double](Get-Date -Date ((Get-Date).ToUniversalTime())
+                      -UFormat %s) * 1000
+                    </code>
+                  </StyledTypography>
+                </StyledCardContent>
+              </StyledContainer>
             </StyledCard>
           </StyledGrid>
         </StyledGrid>
