@@ -36,13 +36,28 @@ export const Form = styled.form`
 
 export const StyledContainer = styled(Container)``;
 
-export const StyledTypography = styled(Typography)``;
+export const StyledTypography = styled(Typography)`
+  && code {
+    font-family: Consolas, 'courier new';
+    color: crimson;
+    background-color: #f1f1f1;
+    padding: 2px;
+    font-size: 105%;
+  }
+
+  &&.list-languages {
+    margin: 10px 0px;
+  }
+`;
 
 export const StyledCard = styled(Card)``;
 
 export const StyledCardContent = styled(CardContent)`
   .title {
     font-size: 14;
+  }
+  &&.text-content {
+    text-align: justify;
   }
 `;
 
