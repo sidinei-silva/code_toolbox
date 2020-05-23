@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
 import {
-  withStyles,
-  Theme,
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
-
-import {
   Card,
   CardContent,
   Typography,
@@ -124,30 +117,22 @@ export const StyledTable = styled(Table)``;
 
 export const StyledTableBody = styled(TableBody)``;
 
-export const StyledTableHead = styled(TableHead)``;
+export const StyledTableCell = styled(TableCell)``;
+
+export const StyledTableHead = styled(TableHead)`
+  background-color: ${props => props.theme.palette.common.black};
+
+  ${StyledTableCell} {
+    color: ${props => props.theme.palette.common.white};
+  }
+`;
 
 export const StyledTableContainer = styled(TableContainer)``;
 
 export const StyledCardHeader = styled(CardHeader)``;
 
-export const StyledTableCell = withStyles((theme: Theme) =>
-  createStyles({
-    head: {
-      backgroundColor: theme.palette.common.black,
-      color: theme.palette.common.white,
-    },
-    body: {
-      fontSize: 14,
-    },
-  }),
-)(TableCell);
-
-export const StyledTableRow = withStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      '&:nth-of-type(odd)': {
-        backgroundColor: theme.palette.action.hover,
-      },
-    },
-  }),
-)(TableRow);
+export const StyledTableRow = styled(TableRow)`
+  &:nth-of-type(odd) {
+    background-color: ${props => props.theme.palette.action.hover};
+  }
+`;
