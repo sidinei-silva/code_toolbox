@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 
 import {
+  withStyles,
+  Theme,
+  createStyles,
+  makeStyles,
+} from '@material-ui/core/styles';
+
+import {
   Card,
   CardContent,
   Typography,
@@ -12,6 +19,13 @@ import {
   Input,
   Box,
   Switch,
+  CardHeader,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  TableContainer,
 } from '@material-ui/core';
 
 import { ChromePicker, TwitterPicker } from 'react-color';
@@ -105,3 +119,35 @@ export const StyledChromePicker = styled(ChromePicker)``;
 export const StyledTwitterPicker = styled(TwitterPicker)``;
 
 export const StyledSwitch = styled(Switch)``;
+
+export const StyledTable = styled(Table)``;
+
+export const StyledTableBody = styled(TableBody)``;
+
+export const StyledTableHead = styled(TableHead)``;
+
+export const StyledTableContainer = styled(TableContainer)``;
+
+export const StyledCardHeader = styled(CardHeader)``;
+
+export const StyledTableCell = withStyles((theme: Theme) =>
+  createStyles({
+    head: {
+      backgroundColor: theme.palette.common.black,
+      color: theme.palette.common.white,
+    },
+    body: {
+      fontSize: 14,
+    },
+  }),
+)(TableCell);
+
+export const StyledTableRow = withStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.action.hover,
+      },
+    },
+  }),
+)(TableRow);
