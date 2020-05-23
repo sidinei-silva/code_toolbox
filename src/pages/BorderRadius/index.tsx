@@ -13,8 +13,15 @@ import {
   StyledDivider,
   StyledCardContent,
   StyledCard,
+  StyledCardHeader,
   ExampleDiv,
   StyledHuePicker,
+  StyledTable,
+  StyledTableBody,
+  StyledTableHead,
+  StyledTableCell,
+  StyledTableRow,
+  StyledTableContainer,
 } from './styles';
 
 interface BorderRadius {
@@ -309,431 +316,557 @@ export default function BorderRadius() {
       <Header />
 
       <StyledContainer>
-        <Title>Border Radius - Javascript</Title>
-        <StyledCard>
-          <StyledCardContent>
-            <StyledGrid
-              spacing={3}
-              container
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
-              <StyledGrid item md={6} lg={6}>
-                {/* allCorners */}
-                <StyledCardContent>
-                  <StyledGrid
-                    container
-                    spacing={2}
-                    justify="center"
-                    alignItems="flex-end"
-                    direction="row"
-                  >
-                    <StyledGrid item xs={8} md={8} lg={8}>
-                      <StyledTypography id="input-slider" gutterBottom>
-                        All Corners
-                      </StyledTypography>
-                      <StyledSlider
-                        value={typeof allCorners === 'number' ? allCorners : 0}
-                        min={0}
-                        max={200}
-                        step={1}
-                        onChange={allCornersHandleSliderChange}
-                        aria-labelledby="input-slider"
-                      />
-                    </StyledGrid>
-                    <StyledGrid item xs={3} md={2} lg={2}>
-                      <StyledTextField
-                        margin="dense"
-                        id="allCorners"
-                        label="px"
-                        variant="outlined"
-                        size="small"
-                        value={allCorners}
-                        onChange={allCornersHandleInputChange}
-                        onBlur={allCornersHandleBlur}
-                        inputProps={{
-                          step: 1,
-                          min: 0,
-                          max: 200,
-                          type: 'number',
-                          'aria-labelledby': 'input-slider',
-                        }}
-                      />
-                    </StyledGrid>
-                  </StyledGrid>
-                </StyledCardContent>
-                <StyledDivider />
-                {/* Top Left */}
-                <StyledCardContent>
-                  <StyledGrid
-                    container
-                    spacing={2}
-                    justify="center"
-                    alignItems="flex-end"
-                    direction="row"
-                  >
-                    <StyledGrid item md={8} lg={8} xs={8}>
-                      <StyledTypography id="input-slider" gutterBottom>
-                        Top Left
-                      </StyledTypography>
-                      <StyledSlider
-                        value={
-                          typeof borderRadius.topLeft === 'number'
-                            ? borderRadius.topLeft
-                            : 0
-                        }
-                        min={0}
-                        max={200}
-                        step={1}
-                        onChange={topLeftHandleSliderChange}
-                        aria-labelledby="input-slider"
-                      />
-                    </StyledGrid>
-                    <StyledGrid item xs={3} md={2} lg={2}>
-                      <StyledTextField
-                        margin="dense"
-                        id="topLeft"
-                        label="px"
-                        variant="outlined"
-                        size="small"
-                        value={borderRadius.topLeft}
-                        onChange={topLeftHandleInputChange}
-                        onBlur={topLeftHandleBlur}
-                        inputProps={{
-                          step: 1,
-                          min: 0,
-                          max: 200,
-                          type: 'number',
-                          'aria-labelledby': 'input-slider',
-                        }}
-                      />
-                    </StyledGrid>
-                  </StyledGrid>
-                </StyledCardContent>
-                {/* Top Right */}
-                <StyledCardContent>
-                  <StyledGrid
-                    container
-                    spacing={2}
-                    justify="center"
-                    alignItems="flex-end"
-                    direction="row"
-                  >
-                    <StyledGrid item md={8} lg={8} xs={8}>
-                      <StyledTypography id="input-slider" gutterBottom>
-                        Top Right
-                      </StyledTypography>
-                      <StyledSlider
-                        value={
-                          typeof borderRadius.topRight === 'number'
-                            ? borderRadius.topRight
-                            : 0
-                        }
-                        min={0}
-                        max={200}
-                        step={1}
-                        onChange={topRightHandleSliderChange}
-                        aria-labelledby="input-slider"
-                      />
-                    </StyledGrid>
-                    <StyledGrid item xs={3} md={2} lg={2}>
-                      <StyledTextField
-                        margin="dense"
-                        id="topRight"
-                        label="px"
-                        variant="outlined"
-                        size="small"
-                        value={borderRadius.topRight}
-                        onChange={topRightHandleInputChange}
-                        onBlur={topRightHandleBlur}
-                        inputProps={{
-                          step: 1,
-                          min: 0,
-                          max: 200,
-                          type: 'number',
-                          'aria-labelledby': 'input-slider',
-                        }}
-                      />
-                    </StyledGrid>
-                  </StyledGrid>
-                </StyledCardContent>
-                {/* Bottom Left */}
-                <StyledCardContent>
-                  <StyledGrid
-                    container
-                    spacing={2}
-                    justify="center"
-                    alignItems="flex-end"
-                    direction="row"
-                  >
-                    <StyledGrid item md={8} lg={8} xs={8}>
-                      <StyledTypography id="input-slider" gutterBottom>
-                        Bottom Left
-                      </StyledTypography>
-                      <StyledSlider
-                        value={
-                          typeof borderRadius.bottomLeft === 'number'
-                            ? borderRadius.bottomLeft
-                            : 0
-                        }
-                        min={0}
-                        max={200}
-                        step={1}
-                        onChange={bottomLeftHandleSliderChange}
-                        aria-labelledby="input-slider"
-                      />
-                    </StyledGrid>
-                    <StyledGrid item xs={3} md={2} lg={2}>
-                      <StyledTextField
-                        margin="dense"
-                        id="bottomLeft"
-                        label="px"
-                        variant="outlined"
-                        size="small"
-                        value={borderRadius.bottomLeft}
-                        onChange={bottomLeftHandleInputChange}
-                        onBlur={bottomLeftHandleBlur}
-                        inputProps={{
-                          step: 1,
-                          min: 0,
-                          max: 200,
-                          type: 'number',
-                          'aria-labelledby': 'input-slider',
-                        }}
-                      />
-                    </StyledGrid>
-                  </StyledGrid>
-                </StyledCardContent>
-                {/* Bottom Right */}
-                <StyledCardContent>
-                  <StyledGrid
-                    container
-                    spacing={2}
-                    justify="center"
-                    alignItems="flex-end"
-                    direction="row"
-                  >
-                    <StyledGrid item md={8} lg={8} xs={8}>
-                      <StyledTypography id="input-slider" gutterBottom>
-                        Bottom Right
-                      </StyledTypography>
-                      <StyledSlider
-                        value={
-                          typeof borderRadius.bottomRight === 'number'
-                            ? borderRadius.bottomRight
-                            : 0
-                        }
-                        min={0}
-                        max={200}
-                        step={1}
-                        onChange={bottomRightHandleSliderChange}
-                        aria-labelledby="input-slider"
-                      />
-                    </StyledGrid>
-                    <StyledGrid item xs={3} md={2} lg={2}>
-                      <StyledTextField
-                        margin="dense"
-                        id="bottomRight"
-                        label="px"
-                        variant="outlined"
-                        size="small"
-                        value={borderRadius.bottomRight}
-                        onChange={bottomRightHandleInputChange}
-                        onBlur={bottomRightHandleBlur}
-                        inputProps={{
-                          step: 1,
-                          min: 0,
-                          max: 200,
-                          type: 'number',
-                          'aria-labelledby': 'input-slider',
-                        }}
-                      />
-                    </StyledGrid>
-                  </StyledGrid>
-                </StyledCardContent>
-                <StyledDivider />
-                <StyledCardContent>
-                  <StyledGrid
-                    container
-                    spacing={2}
-                    justify="center"
-                    alignItems="flex-end"
-                    direction="row"
-                  >
-                    <StyledGrid item md={8} lg={8} xs={8}>
-                      <StyledTypography id="input-slider" gutterBottom>
-                        Border Width (Optional)
-                      </StyledTypography>
-                      <StyledSlider
-                        value={
-                          typeof borderRadius.borderWidth === 'number'
-                            ? borderRadius.borderWidth
-                            : 0
-                        }
-                        min={0}
-                        max={200}
-                        step={1}
-                        onChange={borderWidthHandleSliderChange}
-                        aria-labelledby="input-slider"
-                      />
-                    </StyledGrid>
-                    <StyledGrid item xs={3} md={2} lg={2}>
-                      <StyledTextField
-                        margin="dense"
-                        id="borderWidth"
-                        label="px"
-                        variant="outlined"
-                        size="small"
-                        value={borderRadius.borderWidth}
-                        onChange={borderWidthHandleInputChange}
-                        onBlur={borderWidthHandleBlur}
-                        inputProps={{
-                          step: 1,
-                          min: 0,
-                          max: 200,
-                          type: 'number',
-                          'aria-labelledby': 'input-slider',
-                        }}
-                      />
-                    </StyledGrid>
-                  </StyledGrid>
-                </StyledCardContent>
-                <StyledCardContent>
-                  <StyledGrid
-                    container
-                    spacing={2}
-                    justify="center"
-                    alignContent="center"
-                  >
-                    <StyledGrid item md={8} lg={8} xs={11}>
-                      <StyledTypography id="input-slider" gutterBottom>
-                        Border Color (Optional)
-                      </StyledTypography>
-                      <StyledHuePicker
-                        color={borderRadius.borderColor}
-                        onChange={borderColorHandleInputChange}
-                      />
-                    </StyledGrid>
-                    <StyledGrid item xs={6} md={2} lg={2}>
-                      <StyledTextField
-                        className="digit-4"
-                        id="outlined-select-currency"
-                        select
-                        label="Border Style"
-                        value={borderRadius.borderStyle}
-                        margin="dense"
-                        variant="outlined"
-                        size="small"
-                        SelectProps={{
-                          native: true,
-                        }}
-                        onChange={borderStyleHandleInputChange}
-                      >
-                        <option key="solid" value="solid">
-                          solid
-                        </option>
-                        <option key="dotted" value="dotted">
-                          dotted
-                        </option>
-                        <option key="dashed" value="dashed">
-                          dashed
-                        </option>
-                        <option key="double" value="double">
-                          double
-                        </option>
-                        <option key="groove" value="groove">
-                          groove
-                        </option>
-                        <option key="ridge" value="ridge">
-                          ridge
-                        </option>
-                        <option key="inset" value="inset">
-                          inset
-                        </option>
-                        <option key="outset" value="outset">
-                          outset
-                        </option>
-                        <option key="inherit" value="inherit">
-                          inherit
-                        </option>
-                        <option key="hidden" value="hidden">
-                          hidden
-                        </option>
-                        <option key="none" value="none">
-                          none
-                        </option>
-                      </StyledTextField>
-                    </StyledGrid>
-                  </StyledGrid>
-                </StyledCardContent>
-                <StyledCardContent>
-                  <StyledGrid
-                    container
-                    spacing={2}
-                    justify="center"
-                    alignContent="center"
-                  >
-                    <StyledGrid item md={10} lg={10} xs={11}>
-                      <StyledTypography id="input-slider" gutterBottom>
-                        Background Color (Optional)
-                      </StyledTypography>
-                      <StyledHuePicker
-                        color={borderRadius.backgroundColor}
-                        onChange={backgroundColorHandleInputChange}
-                      />
-                    </StyledGrid>
-                  </StyledGrid>
-                </StyledCardContent>
-              </StyledGrid>
-
-              <StyledGrid item md={6} lg={6}>
+        <Title>Border Radius - CSS</Title>
+        <StyledGrid container justify="center" spacing={5}>
+          <StyledGrid item md={12} lg={12} xs={12}>
+            <StyledCard>
+              <StyledCardContent>
                 <StyledGrid
-                  container
-                  justify="center"
-                  direction="column"
-                  alignItems="center"
                   spacing={3}
+                  container
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
                 >
-                  <StyledGrid item md={12} lg={12} xs={12}>
-                    <StyledCard>
-                      <StyledCardContent>
-                        <StyledTypography variant="body2">
-                          {`background-color: ${borderRadius.backgroundColor}`}
-                        </StyledTypography>
-                        <StyledTypography variant="body2">
-                          {`border-radius: ${borderRadius.topLeft}px ${borderRadius.topRight}px ${borderRadius.bottomLeft}px ${borderRadius.bottomRight}px;`}
-                        </StyledTypography>
-                        <StyledTypography variant="body2">
-                          {`-moz-border-radius: ${borderRadius.topLeft}px ${borderRadius.topRight}px ${borderRadius.bottomLeft}px ${borderRadius.bottomRight}px;`}
-                        </StyledTypography>
-                        <StyledTypography variant="body2">
-                          {`-webkit-border-radius: ${borderRadius.topLeft}px ${borderRadius.topRight}px ${borderRadius.bottomLeft}px ${borderRadius.bottomRight}px;`}
-                        </StyledTypography>
-                        {borderRadius.borderWidth ? (
-                          <StyledTypography variant="body2">{`border: ${borderRadius.borderWidth}px  ${borderRadius.borderStyle} ${borderRadius.borderColor};`}</StyledTypography>
-                        ) : null}
-                      </StyledCardContent>
-                    </StyledCard>
+                  <StyledGrid item md={6} lg={6}>
+                    {/* allCorners */}
+                    <StyledCardContent>
+                      <StyledGrid
+                        container
+                        spacing={2}
+                        justify="center"
+                        alignItems="flex-end"
+                        direction="row"
+                      >
+                        <StyledGrid item xs={8} md={8} lg={8}>
+                          <StyledTypography id="input-slider" gutterBottom>
+                            All Corners
+                          </StyledTypography>
+                          <StyledSlider
+                            value={
+                              typeof allCorners === 'number' ? allCorners : 0
+                            }
+                            min={0}
+                            max={200}
+                            step={1}
+                            onChange={allCornersHandleSliderChange}
+                            aria-labelledby="input-slider"
+                          />
+                        </StyledGrid>
+                        <StyledGrid item xs={3} md={2} lg={2}>
+                          <StyledTextField
+                            margin="dense"
+                            id="allCorners"
+                            label="px"
+                            variant="outlined"
+                            size="small"
+                            value={allCorners}
+                            onChange={allCornersHandleInputChange}
+                            onBlur={allCornersHandleBlur}
+                            inputProps={{
+                              step: 1,
+                              min: 0,
+                              max: 200,
+                              type: 'number',
+                              'aria-labelledby': 'input-slider',
+                            }}
+                          />
+                        </StyledGrid>
+                      </StyledGrid>
+                    </StyledCardContent>
+                    <StyledDivider />
+                    {/* Top Left */}
+                    <StyledCardContent>
+                      <StyledGrid
+                        container
+                        spacing={2}
+                        justify="center"
+                        alignItems="flex-end"
+                        direction="row"
+                      >
+                        <StyledGrid item md={8} lg={8} xs={8}>
+                          <StyledTypography id="input-slider" gutterBottom>
+                            Top Left
+                          </StyledTypography>
+                          <StyledSlider
+                            value={
+                              typeof borderRadius.topLeft === 'number'
+                                ? borderRadius.topLeft
+                                : 0
+                            }
+                            min={0}
+                            max={200}
+                            step={1}
+                            onChange={topLeftHandleSliderChange}
+                            aria-labelledby="input-slider"
+                          />
+                        </StyledGrid>
+                        <StyledGrid item xs={3} md={2} lg={2}>
+                          <StyledTextField
+                            margin="dense"
+                            id="topLeft"
+                            label="px"
+                            variant="outlined"
+                            size="small"
+                            value={borderRadius.topLeft}
+                            onChange={topLeftHandleInputChange}
+                            onBlur={topLeftHandleBlur}
+                            inputProps={{
+                              step: 1,
+                              min: 0,
+                              max: 200,
+                              type: 'number',
+                              'aria-labelledby': 'input-slider',
+                            }}
+                          />
+                        </StyledGrid>
+                      </StyledGrid>
+                    </StyledCardContent>
+                    {/* Top Right */}
+                    <StyledCardContent>
+                      <StyledGrid
+                        container
+                        spacing={2}
+                        justify="center"
+                        alignItems="flex-end"
+                        direction="row"
+                      >
+                        <StyledGrid item md={8} lg={8} xs={8}>
+                          <StyledTypography id="input-slider" gutterBottom>
+                            Top Right
+                          </StyledTypography>
+                          <StyledSlider
+                            value={
+                              typeof borderRadius.topRight === 'number'
+                                ? borderRadius.topRight
+                                : 0
+                            }
+                            min={0}
+                            max={200}
+                            step={1}
+                            onChange={topRightHandleSliderChange}
+                            aria-labelledby="input-slider"
+                          />
+                        </StyledGrid>
+                        <StyledGrid item xs={3} md={2} lg={2}>
+                          <StyledTextField
+                            margin="dense"
+                            id="topRight"
+                            label="px"
+                            variant="outlined"
+                            size="small"
+                            value={borderRadius.topRight}
+                            onChange={topRightHandleInputChange}
+                            onBlur={topRightHandleBlur}
+                            inputProps={{
+                              step: 1,
+                              min: 0,
+                              max: 200,
+                              type: 'number',
+                              'aria-labelledby': 'input-slider',
+                            }}
+                          />
+                        </StyledGrid>
+                      </StyledGrid>
+                    </StyledCardContent>
+                    {/* Bottom Left */}
+                    <StyledCardContent>
+                      <StyledGrid
+                        container
+                        spacing={2}
+                        justify="center"
+                        alignItems="flex-end"
+                        direction="row"
+                      >
+                        <StyledGrid item md={8} lg={8} xs={8}>
+                          <StyledTypography id="input-slider" gutterBottom>
+                            Bottom Left
+                          </StyledTypography>
+                          <StyledSlider
+                            value={
+                              typeof borderRadius.bottomLeft === 'number'
+                                ? borderRadius.bottomLeft
+                                : 0
+                            }
+                            min={0}
+                            max={200}
+                            step={1}
+                            onChange={bottomLeftHandleSliderChange}
+                            aria-labelledby="input-slider"
+                          />
+                        </StyledGrid>
+                        <StyledGrid item xs={3} md={2} lg={2}>
+                          <StyledTextField
+                            margin="dense"
+                            id="bottomLeft"
+                            label="px"
+                            variant="outlined"
+                            size="small"
+                            value={borderRadius.bottomLeft}
+                            onChange={bottomLeftHandleInputChange}
+                            onBlur={bottomLeftHandleBlur}
+                            inputProps={{
+                              step: 1,
+                              min: 0,
+                              max: 200,
+                              type: 'number',
+                              'aria-labelledby': 'input-slider',
+                            }}
+                          />
+                        </StyledGrid>
+                      </StyledGrid>
+                    </StyledCardContent>
+                    {/* Bottom Right */}
+                    <StyledCardContent>
+                      <StyledGrid
+                        container
+                        spacing={2}
+                        justify="center"
+                        alignItems="flex-end"
+                        direction="row"
+                      >
+                        <StyledGrid item md={8} lg={8} xs={8}>
+                          <StyledTypography id="input-slider" gutterBottom>
+                            Bottom Right
+                          </StyledTypography>
+                          <StyledSlider
+                            value={
+                              typeof borderRadius.bottomRight === 'number'
+                                ? borderRadius.bottomRight
+                                : 0
+                            }
+                            min={0}
+                            max={200}
+                            step={1}
+                            onChange={bottomRightHandleSliderChange}
+                            aria-labelledby="input-slider"
+                          />
+                        </StyledGrid>
+                        <StyledGrid item xs={3} md={2} lg={2}>
+                          <StyledTextField
+                            margin="dense"
+                            id="bottomRight"
+                            label="px"
+                            variant="outlined"
+                            size="small"
+                            value={borderRadius.bottomRight}
+                            onChange={bottomRightHandleInputChange}
+                            onBlur={bottomRightHandleBlur}
+                            inputProps={{
+                              step: 1,
+                              min: 0,
+                              max: 200,
+                              type: 'number',
+                              'aria-labelledby': 'input-slider',
+                            }}
+                          />
+                        </StyledGrid>
+                      </StyledGrid>
+                    </StyledCardContent>
+                    <StyledDivider />
+                    <StyledCardContent>
+                      <StyledGrid
+                        container
+                        spacing={2}
+                        justify="center"
+                        alignItems="flex-end"
+                        direction="row"
+                      >
+                        <StyledGrid item md={8} lg={8} xs={8}>
+                          <StyledTypography id="input-slider" gutterBottom>
+                            Border Width (Optional)
+                          </StyledTypography>
+                          <StyledSlider
+                            value={
+                              typeof borderRadius.borderWidth === 'number'
+                                ? borderRadius.borderWidth
+                                : 0
+                            }
+                            min={0}
+                            max={200}
+                            step={1}
+                            onChange={borderWidthHandleSliderChange}
+                            aria-labelledby="input-slider"
+                          />
+                        </StyledGrid>
+                        <StyledGrid item xs={3} md={2} lg={2}>
+                          <StyledTextField
+                            margin="dense"
+                            id="borderWidth"
+                            label="px"
+                            variant="outlined"
+                            size="small"
+                            value={borderRadius.borderWidth}
+                            onChange={borderWidthHandleInputChange}
+                            onBlur={borderWidthHandleBlur}
+                            inputProps={{
+                              step: 1,
+                              min: 0,
+                              max: 200,
+                              type: 'number',
+                              'aria-labelledby': 'input-slider',
+                            }}
+                          />
+                        </StyledGrid>
+                      </StyledGrid>
+                    </StyledCardContent>
+                    <StyledCardContent>
+                      <StyledGrid
+                        container
+                        spacing={2}
+                        justify="center"
+                        alignContent="center"
+                      >
+                        <StyledGrid item md={8} lg={8} xs={11}>
+                          <StyledTypography id="input-slider" gutterBottom>
+                            Border Color (Optional)
+                          </StyledTypography>
+                          <StyledHuePicker
+                            color={borderRadius.borderColor}
+                            onChange={borderColorHandleInputChange}
+                          />
+                        </StyledGrid>
+                        <StyledGrid item xs={6} md={2} lg={2}>
+                          <StyledTextField
+                            className="digit-4"
+                            id="outlined-select-currency"
+                            select
+                            label="Border Style"
+                            value={borderRadius.borderStyle}
+                            margin="dense"
+                            variant="outlined"
+                            size="small"
+                            SelectProps={{
+                              native: true,
+                            }}
+                            onChange={borderStyleHandleInputChange}
+                          >
+                            <option key="solid" value="solid">
+                              solid
+                            </option>
+                            <option key="dotted" value="dotted">
+                              dotted
+                            </option>
+                            <option key="dashed" value="dashed">
+                              dashed
+                            </option>
+                            <option key="double" value="double">
+                              double
+                            </option>
+                            <option key="groove" value="groove">
+                              groove
+                            </option>
+                            <option key="ridge" value="ridge">
+                              ridge
+                            </option>
+                            <option key="inset" value="inset">
+                              inset
+                            </option>
+                            <option key="outset" value="outset">
+                              outset
+                            </option>
+                            <option key="inherit" value="inherit">
+                              inherit
+                            </option>
+                            <option key="hidden" value="hidden">
+                              hidden
+                            </option>
+                            <option key="none" value="none">
+                              none
+                            </option>
+                          </StyledTextField>
+                        </StyledGrid>
+                      </StyledGrid>
+                    </StyledCardContent>
+                    <StyledCardContent>
+                      <StyledGrid
+                        container
+                        spacing={2}
+                        justify="center"
+                        alignContent="center"
+                      >
+                        <StyledGrid item md={10} lg={10} xs={11}>
+                          <StyledTypography id="input-slider" gutterBottom>
+                            Background Color (Optional)
+                          </StyledTypography>
+                          <StyledHuePicker
+                            color={borderRadius.backgroundColor}
+                            onChange={backgroundColorHandleInputChange}
+                          />
+                        </StyledGrid>
+                      </StyledGrid>
+                    </StyledCardContent>
                   </StyledGrid>
-                  <StyledGrid item md={12} lg={12} xs={12}>
-                    <ExampleDiv
-                      id="example-div"
-                      borderwidth={borderRadius.borderWidth}
-                      topleft={borderRadius.topLeft}
-                      topright={borderRadius.topRight}
-                      bottomleft={borderRadius.bottomLeft}
-                      bottomright={borderRadius.bottomRight}
-                      borderstyle={borderRadius.borderStyle}
-                      bordercolor={borderRadius.borderColor}
-                      backgroundcolor={borderRadius.backgroundColor}
-                    />
+
+                  <StyledGrid item md={6} lg={6}>
+                    <StyledGrid
+                      container
+                      justify="center"
+                      direction="column"
+                      alignItems="center"
+                      spacing={3}
+                    >
+                      <StyledGrid item md={12} lg={12} xs={12}>
+                        <StyledCard>
+                          <StyledCardContent>
+                            <StyledTypography variant="body2">
+                              {`background-color: ${borderRadius.backgroundColor}`}
+                            </StyledTypography>
+                            <StyledTypography variant="body2">
+                              {`border-radius: ${borderRadius.topLeft}px ${borderRadius.topRight}px ${borderRadius.bottomLeft}px ${borderRadius.bottomRight}px;`}
+                            </StyledTypography>
+                            <StyledTypography variant="body2">
+                              {`-moz-border-radius: ${borderRadius.topLeft}px ${borderRadius.topRight}px ${borderRadius.bottomLeft}px ${borderRadius.bottomRight}px;`}
+                            </StyledTypography>
+                            <StyledTypography variant="body2">
+                              {`-webkit-border-radius: ${borderRadius.topLeft}px ${borderRadius.topRight}px ${borderRadius.bottomLeft}px ${borderRadius.bottomRight}px;`}
+                            </StyledTypography>
+                            {borderRadius.borderWidth ? (
+                              <StyledTypography variant="body2">{`border: ${borderRadius.borderWidth}px  ${borderRadius.borderStyle} ${borderRadius.borderColor};`}</StyledTypography>
+                            ) : null}
+                          </StyledCardContent>
+                        </StyledCard>
+                      </StyledGrid>
+                      <StyledGrid item md={12} lg={12} xs={12}>
+                        <ExampleDiv
+                          id="example-div"
+                          borderwidth={borderRadius.borderWidth}
+                          topleft={borderRadius.topLeft}
+                          topright={borderRadius.topRight}
+                          bottomleft={borderRadius.bottomLeft}
+                          bottomright={borderRadius.bottomRight}
+                          borderstyle={borderRadius.borderStyle}
+                          bordercolor={borderRadius.borderColor}
+                          backgroundcolor={borderRadius.backgroundColor}
+                        />
+                      </StyledGrid>
+                    </StyledGrid>
                   </StyledGrid>
                 </StyledGrid>
-              </StyledGrid>
-            </StyledGrid>
-          </StyledCardContent>
-        </StyledCard>
+              </StyledCardContent>
+            </StyledCard>
+          </StyledGrid>
+          <StyledGrid item md={12} lg={12} xs={12}>
+            <StyledCard>
+              <StyledContainer>
+                <StyledCardHeader title="What is Border Radius?" />
+                <StyledCardContent className="text-content">
+                  <StyledTypography>
+                    <q>
+                      The border-radius CSS property rounds the corners of an
+                      element&apos;s outer border edge. You can set a single
+                      radius to make circular corners, or two radii to make
+                      elliptical corners.
+                    </q>
+                    <span> - </span>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">
+                      MDN web docs - border-radius
+                    </a>
+                  </StyledTypography>
+                </StyledCardContent>
+                <StyledCardHeader title="Values" />
+                <StyledCardContent className="text-content">
+                  <StyledTableContainer component={StyledCard}>
+                    <StyledTable>
+                      <caption>
+                        <StyledTypography align="right">
+                          <a href="https://htmldog.com/references/css/properties/border-radius/">
+                            Font - HTML Dog - CSS Property: border-radius
+                          </a>
+                        </StyledTypography>
+                      </caption>
+                      <StyledTableHead>
+                        <StyledTableRow>
+                          <StyledTableCell>Value</StyledTableCell>
+                          <StyledTableCell>Note</StyledTableCell>
+                          <StyledTableCell>Example</StyledTableCell>
+                        </StyledTableRow>
+                      </StyledTableHead>
+                      <StyledTableBody>
+                        <StyledTableRow>
+                          <StyledTableCell>length</StyledTableCell>
+                          <StyledTableCell>
+                            Uniform circle radius for every corner.
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            <code>1em</code>
+                          </StyledTableCell>
+                        </StyledTableRow>
+                        <StyledTableRow>
+                          <StyledTableCell>percentage</StyledTableCell>
+                          <StyledTableCell>
+                            Uniform ellipse radius for every corner. Horizontal
+                            radius is calculated as a percentage of the border
+                            box’s width. Vertical radius is calculated as a
+                            percentage of the border box’s height.
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            <code>50%</code>
+                          </StyledTableCell>
+                        </StyledTableRow>
+                        <StyledTableRow>
+                          <StyledTableCell>
+                            [value]&nbsp;[value]
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            First value is top-left and bottom-right corners.
+                            Second value is top-right and bottom-left corners.
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            <code>10px&nbsp;20px</code>
+                          </StyledTableCell>
+                        </StyledTableRow>
+                        <StyledTableRow>
+                          <StyledTableCell>
+                            [value]&nbsp;[value]&nbsp;[value]
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            First value is top-left corner. Second value is
+                            top-right and bottom-left corners. Third value is
+                            bottom-right corner.
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            <code>10px&nbsp;20px&nbsp;30px</code>
+                          </StyledTableCell>
+                        </StyledTableRow>
+                        <StyledTableRow>
+                          <StyledTableCell>
+                            [value]&nbsp;[value]&nbsp;[value]&nbsp;[value]
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            First value is top-left corner. Second value is
+                            top-right corner. Third value is bottom-right
+                            corner. Fourth value is bottom-left corner.
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            <code>10px&nbsp;20px&nbsp;30px&nbsp;40px</code>
+                          </StyledTableCell>
+                        </StyledTableRow>
+                        <StyledTableRow>
+                          <StyledTableCell>
+                            [values]&nbsp;
+                            <code>/</code>
+                            &nbsp;[values]
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            First set of values specifies horizontal radii.
+                            Second set of values specifies vertical radii.
+                          </StyledTableCell>
+                          <StyledTableCell>
+                            <code>
+                              10px&nbsp;20px&nbsp;/&nbsp;5px&nbsp;10px
+                            </code>
+                          </StyledTableCell>
+                        </StyledTableRow>
+                      </StyledTableBody>
+                    </StyledTable>
+                  </StyledTableContainer>
+                </StyledCardContent>
+                <StyledDivider />
+              </StyledContainer>
+            </StyledCard>
+          </StyledGrid>
+        </StyledGrid>
       </StyledContainer>
       <Footer />
     </>
