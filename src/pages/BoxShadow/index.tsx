@@ -589,7 +589,7 @@ export default function BoxShadow() {
                 </StyledCardContent>
                 <StyledCardHeader title="Values" />
                 <StyledCardContent className="text-content">
-                  <StyledTableContainer component={StyledCard}>
+                  <StyledTableContainer>
                     <StyledTable>
                       <caption>
                         <StyledTypography align="right">
