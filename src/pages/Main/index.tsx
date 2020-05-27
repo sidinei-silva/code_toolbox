@@ -6,7 +6,6 @@ import Footer from '../../components/Footer';
 import Generator from '../../components/Generator';
 
 export default function Main() {
-  document.title = 'Home - Code Toolbox';
   return (
     <>
       <Header />
