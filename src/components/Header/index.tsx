@@ -1,5 +1,5 @@
 import React from 'react';
-import { GitHub, Home } from '@material-ui/icons';
+import { GitHub, Home, LinkedIn } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
 import { Navbar, StyledButton } from './styles';
@@ -33,6 +33,17 @@ const Header = () => {
           size="large"
         >
           <GitHub fontSize="large" />
+        </StyledButton>
+
+        <StyledButton
+          href="www.linkedin.com/in/sidinei-silva-472570b2"
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="secondary"
+          size="large"
+        >
+          <LinkedIn fontSize="large" />
         </StyledButton>
       </div>
     </Navbar>
