@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Content, StyledContainer } from './styles';
 
 import Header from '../../components/Header';
@@ -13,26 +12,20 @@ export default function Main() {
       <Header />
       <StyledContainer>
         <Content>
-          <Link to="/timestamp">
-            <Generator
-              title="TimeStamp"
-              description="Timestamp generator for javascript"
-            />
-          </Link>
+          <Generator
+            title="TimeStamp"
+            description="Timestamp generator for javascript"
+          />
 
-          <Link to="/border-radius">
-            <Generator
-              title="Border Radius"
-              description="Border Radius generator for CSS"
-            />
-          </Link>
+          <Generator
+            title="Border Radius"
+            description="Border Radius generator for CSS"
+          />
 
-          <Link to="/box-shadow">
-            <Generator
-              title="Box Shadow"
-              description="Box Shadow generator for CSS"
-            />
-          </Link>
+          <Generator
+            title="Box Shadow"
+            description="Box Shadow generator for CSS"
+          />
           <Generator title="Coming Soon" description="Coming Soon" />
         </Content>
       </StyledContainer>
