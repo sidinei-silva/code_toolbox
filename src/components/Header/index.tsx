@@ -4,15 +4,12 @@ import { Link } from 'react-router-dom';
 
 import { Navbar, StyledButton } from './styles';
 
-import logo from '../../assets/img/logo_transparent.png';
+// import logo from '../../assets/img/logo_transparent.png';
 
 const Header = () => {
   return (
     <Navbar>
-      <Link to="/">
-        <img src={logo} alt="generations-hub" />
-      </Link>
-
+      <img src="/logo_transparent.png" alt="generations-hub" />
       <div id="button-group">
         <StyledButton
           href="/"
