@@ -26,7 +26,7 @@ import Footer from '../../components/Footer';
 import timezones from './timezones';
 
 const Timestamp: React.FC = () => {
-  document.title = 'Timestamp - Code Toolbox';
+  // document.title = 'Timestamp - Code Toolbox';
   // Generate Now
   const [time, setTime] = useState(new Date());
   time.setSeconds(0);
