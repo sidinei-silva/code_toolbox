@@ -38,6 +38,11 @@ export default class Document extends NextDocument {
     return (
       <html lang="en">
         <Head>
+          <script
+            data-ad-client="ca-pub-7691472053775313"
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          />
           <meta
             name="description"
             content="A website with a toolbox for developers, with code generators and conversions to help in everyday life."
