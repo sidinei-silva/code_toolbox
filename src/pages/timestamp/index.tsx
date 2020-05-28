@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import Head from 'next/head';
+
 import {
   Title,
   StyledContainer,
@@ -18,15 +20,15 @@ import {
   StyledExpansionPanel,
   StyledExpansionPanelSummary,
   StyledExpansionPanelDetails,
-} from './styles';
+} from '../../styles/timestamp/styles';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-import timezones from './timezones';
+import timezones from '../../utils/timezones';
 
-const Timestamp: React.FC = () => {
-  document.title = 'Timestamp - Code Toolbox';
+export default function Timestamp() {
+  // document.title = 'Timestamp - Code Toolbox';
   // Generate Now
   const [time, setTime] = useState(new Date());
   time.setSeconds(0);
@@ -84,6 +86,17 @@ const Timestamp: React.FC = () => {
 
   return (
     <>
+      <Head>
+        <title>Timestamp - Code Toolbox</title>
+        <meta
+          name="keywords"
+          content="Code, code, toolbox, Toolbox, Code Toolbox, code toolbox, CodeToolbox, codetoolbox, timestamp, Timestamp, Time Stamp, time stamp, time ,CSS, JavaScript"
+        />
+        <meta
+          name="description"
+          content="Convert date/time local or inputed to timestamp javascript"
+        />
+      </Head>
       <Header />
       <StyledContainer>
         <Title>Timestamp - Javascript</Title>
@@ -580,6 +593,4 @@ const Timestamp: React.FC = () => {
       <Footer />
     </>
   );
-};
-
-export default Timestamp;
+}
