@@ -9,7 +9,9 @@ import { Navbar, StyledButton } from './styles';
 const Header = () => {
   return (
     <Navbar>
-      <img src="/logo_transparent.png" alt="generations-hub" />
+      <a href="/">
+        <img src="/logo_transparent.png" alt="generations-hub" />
+      </a>
       <div id="button-group">
         <StyledButton
           href="/"
