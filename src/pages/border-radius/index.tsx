@@ -37,8 +37,6 @@ interface BorderRadius {
 }
 
 export default function BorderRadius() {
-  // document.title = 'Border Radius - Code Toolbox';
-
   const [borderRadius, setBorderRadius] = useState<BorderRadius>({
     topLeft: 30,
     topRight: 30,

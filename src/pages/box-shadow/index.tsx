@@ -46,8 +46,6 @@ interface BoxShadow {
 }
 
 export default function BoxShadow() {
-  document.title = 'Box Shadow - Code Toolbox';
-
   const [boxShadow, setBoxShadow] = useState<BoxShadow>({
     horizontalLength: 10,
     verticalLength: 10,
