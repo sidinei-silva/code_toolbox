@@ -25,7 +25,7 @@ import {
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-import timezones from './timezones';
+import timezones from '../../utils/timezones';
 
 export default function Timestamp() {
   // document.title = 'Timestamp - Code Toolbox';
