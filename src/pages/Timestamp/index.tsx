@@ -20,7 +20,7 @@ import {
   StyledExpansionPanel,
   StyledExpansionPanelSummary,
   StyledExpansionPanelDetails,
-} from './styles';
+} from '../../styles/timestamp/styles';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';

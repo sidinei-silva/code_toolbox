@@ -26,7 +26,7 @@ import {
   StyledTableCell,
   StyledTableRow,
   StyledTableContainer,
-} from './styles';
+} from '../../styles/box-shadow/styles';
 
 interface RGB {
   r: number;

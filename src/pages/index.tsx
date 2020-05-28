@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { Content, StyledContainer } from './styles';
+import { Content, StyledContainer } from '../styles/main/styles';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';

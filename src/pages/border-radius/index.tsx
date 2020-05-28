@@ -23,7 +23,7 @@ import {
   StyledTableCell,
   StyledTableRow,
   StyledTableContainer,
-} from './styles';
+} from '../../styles/border-radius/styles';
 
 interface BorderRadius {
   topLeft: number | string | Array<number | string>;
