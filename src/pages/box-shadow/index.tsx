@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Head from 'next/head';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -216,6 +217,17 @@ export default function BoxShadow() {
 
   return (
     <>
+      <Head>
+        <title>Box Shadow - Code Toolbox</title>
+        <meta
+          name="keywords"
+          content="Code, code, toolbox, Toolbox, Code Toolbox, code toolbox, CodeToolbox, codetoolbox, boxshadow, shadowbox, BoxShadow, ShadowBox, Shadow Box, shadow box, Box Shadow, box shadow , Box, Shadow, shadow, box,CSS, JavaScript"
+        />
+        <meta
+          name="description"
+          content="Generator CSS and View to Box Shadow"
+        />
+      </Head>
       <Header />
 
       <StyledContainer>

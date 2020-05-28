@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Head from 'next/head';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -313,6 +314,17 @@ export default function BorderRadius() {
 
   return (
     <>
+      <Head>
+        <title>Border Radius - Code Toolbox</title>
+        <meta
+          name="keywords"
+          content="Code, code, toolbox, Toolbox, Code Toolbox, code toolbox, CodeToolbox, codetoolbox, BorderRadius, RadiusBorder, borderradius, radiusborder, Border Radius, Border, border, radius, Radius, Radius Border, radius border,CSS, JavaScript"
+        />
+        <meta
+          name="description"
+          content="Generator CSS and View to Border Radius"
+        />
+      </Head>
       <Header />
 
       <StyledContainer>

@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import Head from 'next/head';
+
 import {
   Title,
   StyledContainer,
@@ -84,6 +86,17 @@ const Timestamp: React.FC = () => {
 
   return (
     <>
+      <Head>
+        <title>Timestamp - Code Toolbox</title>
+        <meta
+          name="keywords"
+          content="Code, code, toolbox, Toolbox, Code Toolbox, code toolbox, CodeToolbox, codetoolbox, timestamp, Timestamp, Time Stamp, time stamp, time ,CSS, JavaScript"
+        />
+        <meta
+          name="description"
+          content="Convert date/time local or inputed to timestamp javascript"
+        />
+      </Head>
       <Header />
       <StyledContainer>
         <Title>Timestamp - Javascript</Title>
