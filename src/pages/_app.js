@@ -13,6 +13,8 @@ import GlobalStyle from '../styles/global';
 
 import theme from '../theme';
 
+import '../styles/button-builder/presets/bootstrap.css';
+
 export default class App extends NextApp {
   // Check if in production
   isProduction = process.env.NODE_ENV === 'production';
