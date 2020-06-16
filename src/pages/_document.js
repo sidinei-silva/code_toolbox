@@ -22,11 +22,11 @@ export default class Document extends NextDocument {
       return {
         ...initialProps,
         styles: [
-          <React.Fragment key="styles">
+          <>
             {initialProps.styles}
             {materialUiSheets.getStyleElement()}
             {styledComponentSheet.getStyleElement()}
-          </React.Fragment>,
+          </>,
         ],
       };
     } finally {

@@ -25,11 +25,11 @@ export default function Main() {
       <Header />
       <StyledContainer>
         <Content>
-          <Link href="/timestamp">
+          <Link href="/button-builder">
             <a>
               <Generator
-                title="TimeStamp"
-                description="Timestamp generator for javascript"
+                title="Button Builder"
+                description="Super Button generator for CSS"
               />
             </a>
           </Link>
@@ -48,6 +48,15 @@ export default function Main() {
               <Generator
                 title="Box Shadow"
                 description="Box Shadow generator for CSS"
+              />
+            </a>
+          </Link>
+
+          <Link href="/timestamp">
+            <a>
+              <Generator
+                title="TimeStamp"
+                description="Timestamp generator for javascript"
               />
             </a>
           </Link>
